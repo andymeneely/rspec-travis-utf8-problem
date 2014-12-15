@@ -17,6 +17,7 @@ describe 'string character sets' do
     expect("♠").to eq("\u2660")
   end
 
+  # This is the one that fails for me on Travis and nowhere else
   it 'works on written file compared with escaped' do
     File.open("tmp.txt", 'w+') { |f| f.write("\u2660") }
     str = File.open("tmp.txt", 'r:UTF-8').read
